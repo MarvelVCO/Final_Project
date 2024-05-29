@@ -6,14 +6,15 @@ public class CameraRotationLock : MonoBehaviour
     public Vector3 offset;
     public float offsetAngle;
 
-    void LateUpdate()
+    void Start()
     {
-        Vector3 desiredPosition = player.position + player.rotation * offset;
+        offset = transform.position - player.transform.position;
+    }
 
-        // Calculate the desired rotation based on the offset angle and the player's forward direction
-        Quaternion desiredRotation = Quaternion.LookRotation(player.forward, Vector3.up) * Quaternion.Euler(offsetAngle, 0f, 0f);
+    void Update()
+    {
+        transform.position = player.transform.position + offset;
+        transform.rotation = Quaternion.Euler(Vector3.up * 30f);
 
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * 10f);
-        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, Time.deltaTime * 10f);
     }
 }
