@@ -11,10 +11,10 @@ public class CameraRotationLock : MonoBehaviour
         offset = transform.position - player.transform.position;
     }
 
-    void Update()
+    void LateUpdate()
     {
         transform.position = player.transform.position + offset;
-        transform.rotation = Quaternion.Euler(Vector3.up * 30f);
+        transform.rotation = Quaternion.Euler(Vector3.right * 30f);
 
     }
 }
