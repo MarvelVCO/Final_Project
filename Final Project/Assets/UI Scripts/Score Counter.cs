@@ -10,6 +10,6 @@ public class ScoreCounter : MonoBehaviour
 
     void Update()
     {
-        scoreText.SetText($"Points: {Points.amount()}");
+        scoreText.SetText($"Points: " + Points.amount());
     }
 }

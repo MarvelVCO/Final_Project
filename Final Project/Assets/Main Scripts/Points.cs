@@ -29,8 +29,8 @@ public class Points : MonoBehaviour
         points -= d;
     }
 
-    public static string amount()
+    public static int amount()
     {
-        return "" + points;
+        return points;
     }
 }
