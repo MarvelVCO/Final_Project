@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pad2Text: {fileID: 4273587710438499138, guid: 828f6e8d09171cc48af0ad53310ba749, type: 3}
-  bought: 0
+  bought: {fileID: -8263119222416985070, guid: bf24b06cf8ce5df49af873541cf48473, type: 3}
