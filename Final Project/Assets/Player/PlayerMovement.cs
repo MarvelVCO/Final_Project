@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Example : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 4.0f;
+    private float playerSpeed = 5.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
@@ -21,7 +19,7 @@ public class Example : MonoBehaviour
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = -2f;
         }
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -34,10 +32,11 @@ public class Example : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
+
         controller.Move(playerVelocity * Time.deltaTime);
     }
 }

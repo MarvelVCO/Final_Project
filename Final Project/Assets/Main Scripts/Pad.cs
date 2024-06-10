@@ -6,15 +6,17 @@ public class Pad : MonoBehaviour
 {
     public int num;
     public int cost;
-    public int points;
-    private bool bought;
+    public float points;
+    public float multiplier;
+    public PuckSpawner puckSpawner;
+    
 
-    public Pad(int num, int cost, int points)
+    public Pad(int num, int cost, float points, float multiplier)
     {
         this.num = num;
         this.cost = cost;
         this.points = points;
-        bought = false;
+        this.multiplier = multiplier;
     }
 
     public int getNum()
@@ -27,37 +29,39 @@ public class Pad : MonoBehaviour
         return cost;
     }
 
-    public int getPoints()
+    public float getPoints()
     {
         return points;
     }
 
-    public bool isBought()
+    public float getMultiplier() 
     {
-        return bought;
+        return multiplier;
     }
 
     public void purchase()
     {
-        bought = true;
+        puckSpawner.SpawnPuck(multiplier);
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            if (bought)
+            if (Points.amount() >= cost)
             {
-                Points.increase(points);
+                Points.decrease(cost);
+                purchase();
             }
+        }
 
-            else
+        if (collision.gameObject.name == "Puck(Clone)")
+        {
+            Puck puck = collision.gameObject.GetComponent<Puck>();
+            if (puck != null)
             {
-                if (Points.amount() >= cost)
-                {
-                    Points.decrease(cost);
-                    purchase();
-                }
+                Points.increase(points * puck.GetMultiplier());
+                puck.Disappear();
             }
         }
     }

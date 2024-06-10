@@ -5,7 +5,7 @@ using UnityEngine;
 public class Points : MonoBehaviour
 {
     public static Points instance;
-    public static int points = 0;
+    public static float points = 0f;
 
     void Awake()
     {
@@ -19,17 +19,17 @@ public class Points : MonoBehaviour
         }
     }
 
-    public static void increase(int i)
+    public static void increase(float i)
     {
         points += i;
     }
 
-    public static void decrease(int d)
+    public static void decrease(float d)
     {
         points -= d;
     }
 
-    public static int amount()
+    public static float amount()
     {
         return points;
     }
