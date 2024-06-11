@@ -5,7 +5,7 @@ using UnityEngine;
 public class Points : MonoBehaviour
 {
     public static Points instance;
-    public static float points = 0f;
+    public static float points = 3f;
 
     void Awake()
     {
