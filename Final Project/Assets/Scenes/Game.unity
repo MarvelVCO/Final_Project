@@ -158,7 +158,7 @@ MonoBehaviour:
   num: 4
   cost: 50
   points: 0
-  multiplier: 10
+  multiplier: 20
   puckSpawner: {fileID: 650933332}
 --- !u!65 &7260455
 BoxCollider:
@@ -4184,7 +4184,7 @@ MonoBehaviour:
   num: 5
   cost: 250
   points: 0
-  multiplier: 25
+  multiplier: 40
   puckSpawner: {fileID: 650933332}
 --- !u!65 &674158531
 BoxCollider:
@@ -7753,7 +7753,7 @@ MonoBehaviour:
   num: 6
   cost: 1000
   points: 0
-  multiplier: 100
+  multiplier: 250
   puckSpawner: {fileID: 650933332}
 --- !u!65 &1372518531
 BoxCollider:
@@ -7874,7 +7874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   num: 1
-  cost: 0
+  cost: 1
   points: 0
   multiplier: 1
   puckSpawner: {fileID: 650933332}
@@ -9659,7 +9659,7 @@ MonoBehaviour:
   num: 3
   cost: 20
   points: 0
-  multiplier: 4
+  multiplier: 10
   puckSpawner: {fileID: 650933332}
 --- !u!65 &1738417201
 BoxCollider:
