@@ -80,7 +80,7 @@ ScriptsOnlyBuild:
     methodName: Quit
   - assembly: Assembly-CSharp
     fullTypeName: quitOrPlay
-    methodName: Quit
+    methodName: PrevScene
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -154,6 +154,8 @@ ScriptsOnlyBuild:
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}

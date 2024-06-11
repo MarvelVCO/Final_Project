@@ -312,7 +312,7 @@
 "Assets/Main Scripts/Points.cs"
 "Assets/Main Scripts/Puck.cs"
 "Assets/Main Scripts/PuckSpawner.cs"
-"Assets/MenuScripts/quitOrPlay.cs"
+"Assets/MenuScripts/SceneHandler.cs"
 "Assets/Player/CameraMovement/CameraRotationLock.cs"
 "Assets/Player/PlayerMovement.cs"
 "Assets/PlinkoScripts/PegPlacer.cs"

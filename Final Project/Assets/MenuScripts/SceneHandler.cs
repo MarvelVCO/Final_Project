@@ -10,6 +10,11 @@ public class quitOrPlay : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+        public void PrevScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
     public void Quit()
     {
         Application.Quit();
