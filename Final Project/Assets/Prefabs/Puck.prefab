@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6212889439439401486}
   m_Layer: 0
   m_Name: Puck
-  m_TagString: Untagged
+  m_TagString: Puck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3dcab2c4142d54b963eccffcac8099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1
+  pointValue: 0
   disappearTime: 20
 --- !u!54 &6410811335783972093
 Rigidbody:

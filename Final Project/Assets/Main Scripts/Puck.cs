@@ -5,7 +5,6 @@ public class Puck : MonoBehaviour
     private Rigidbody rb;
     private Renderer rend;
     private Vector3 startPos;
-    public float multiplier;
     public float disappearTime = 20f;
 
     void Start()
@@ -23,15 +22,5 @@ public class Puck : MonoBehaviour
     public void Disappear()
     {
         Destroy(gameObject);
-    }
-
-    public float GetMultiplier()
-    {
-        return multiplier;
-    }
-
-    public void SetMultiplier(float value)
-    {
-        multiplier = value;
     }
 }

@@ -1,14 +1,20 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CameraRotationLock
-    - Pad
-    - PadText
-    - PlayerMovement
-    - Points
+    - MultiplierPad
+    - PointDetectorText
     - Puck
+    - PuckGravityUpgradeScript
+    - PuckGravityUpgradeTextScript
+    - PuckMultiplierUpgradeScript
+    - PuckMultiplierUpgradeTextScript
+    - PuckSizeUpgradeScript
+    - PuckSizeUpgradeTextScript
     - PuckSpawner
+    - PuckUpgradeScript
+    - PuckUpgradeTextScript
     - ScoreCounter
+    - Stats
     - quitOrPlay
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -79,8 +85,20 @@ ScriptsOnlyBuild:
     fullTypeName: quitOrPlay
     methodName: Quit
   - assembly: Assembly-CSharp
+    fullTypeName: PuckUpgradeScript
+    methodName: UpgradePuck
+  - assembly: Assembly-CSharp
+    fullTypeName: PuckSizeUpgradeScript
+    methodName: UpgradePuck
+  - assembly: Assembly-CSharp
     fullTypeName: quitOrPlay
     methodName: PrevScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PuckMultiplierUpgradeScript
+    methodName: UpgradePuck
+  - assembly: Assembly-CSharp
+    fullTypeName: PuckGravityUpgradeScript
+    methodName: UpgradeGravity
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -120,10 +138,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1902}
     - Class: 114
-      Script: {instanceID: 1978}
-    - Class: 114
-      Script: {instanceID: 2438}
-    - Class: 114
       Script: {instanceID: 2592}
     - Class: 114
       Script: {instanceID: 2758}
@@ -150,7 +164,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6216}
     - Class: 114
-      Script: {instanceID: 6356}
+      Script: {instanceID: 25834}
+    - Class: 114
+      Script: {instanceID: 42782}
+    - Class: 114
+      Script: {instanceID: 42806}
+    - Class: 114
+      Script: {instanceID: 48944}
+    - Class: 114
+      Script: {instanceID: 50716}
+    - Class: 114
+      Script: {instanceID: 56920}
+    - Class: 114
+      Script: {instanceID: 56934}
+    - Class: 114
+      Script: {instanceID: 84200}
+    - Class: 114
+      Script: {instanceID: 84204}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -375,7 +405,7 @@ ScriptsOnlyBuild:
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: Points
+    className: Stats
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -576,7 +606,7 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: b4026768d0b1879e0ea26c98cc0b9ec4
+      Hash: 8aec309f1392b935e7a59fde7524e6c6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Puck
@@ -936,10 +966,10 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 0deaf7b3aa49070feda8f701bada1f24
+      Hash: 6d33000da0038c679767de3016e66e1f
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: Pad
+    className: MultiplierPad
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1032,7 +1062,7 @@ ScriptsOnlyBuild:
     className: AnimatorMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a250ab5f6e3a67e062591a11947fd247
+      Hash: 3fe3471221676013c0d0e50712d94017
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ScoreCounter
@@ -1104,7 +1134,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 4f70f0a43e73be1b0cd81abef246b270
+      Hash: d4fde4dcca0b95f837be40d6de45d135
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PuckSpawner
@@ -1126,12 +1156,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Outline
-  - hash:
-      serializedVersion: 2
-      Hash: 91986daa23aecd302ee8fac27267b0cf
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PadText
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1384,6 +1408,60 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: bed443537b78a79e938424d24eb9f196
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PointDetectorText
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckUpgradeScript
+  - hash:
+      serializedVersion: 2
+      Hash: 4fa53fb2e85cddb815a6c01f8b3152db
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckUpgradeTextScript
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckSizeUpgradeScript
+  - hash:
+      serializedVersion: 2
+      Hash: 8e0cefd043956e0776c4e54d5080d197
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckSizeUpgradeTextScript
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckMultiplierUpgradeScript
+  - hash:
+      serializedVersion: 2
+      Hash: bc44928050c0d98cb21a9a5f4b81f050
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckMultiplierUpgradeTextScript
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckGravityUpgradeScript
+  - hash:
+      serializedVersion: 2
+      Hash: 32ef6ad52b8c4bf7c131e45afde43e3c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PuckGravityUpgradeTextScript
   platform: 19
   scenePathNames:
   - Assets/Scenes/WelcomeScreen.unity
